@@ -15,7 +15,7 @@ import { TodoDto } from './dto/todo.dto';
 import { CreateTodoDto } from './dto/todo.create.dto';
 import { TodoService } from './todo.service';
 import { AuthGuard } from '@nestjs/passport';
-import { UserDto } from '@user/dto/user.dto';
+import { UserDto } from 'src/users/dto/user.dto';
 
 @Controller('api/todos')
 export class TodoController {

@@ -1,4 +1,4 @@
-import { TaskEntity } from '@todo/entity/task.entity';
+import { TaskEntity } from 'src/todo/entity/task.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,

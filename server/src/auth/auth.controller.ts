@@ -9,7 +9,7 @@ import {
   Req,
   UseGuards,
 } from '@nestjs/common';
-import { CreateUserDto } from '@user/dto/user.create.dto';
+import { CreateUserDto } from 'src/users/dto/user.create.dto';
 import { RegistrationStatus } from './interfaces/regisration-status.interface';
 import { AuthService } from './auth.service';
 import { LoginStatus } from './interfaces/login-status.interface';

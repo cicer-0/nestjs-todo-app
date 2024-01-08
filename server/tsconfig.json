@@ -11,9 +11,9 @@
     "sourceMap": true,
     "lib": ["es2015"],
     "paths": {
-      "@todo/*": ["src/todo/*"],
-      "@shared/*": ["src/shared/*"],
-      "@user/*": ["src/users/*"]
+      "todo/*": ["src/todo/*"],
+      "shared/*": ["src/shared/*"],
+      "user/*": ["src/users/*"]
     }
   },
   "exclude": ["node_modules"]

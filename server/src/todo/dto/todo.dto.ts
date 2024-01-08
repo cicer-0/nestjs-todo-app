@@ -1,6 +1,6 @@
 import { TaskDto } from './task.dto';
 import { IsNotEmpty } from 'class-validator';
-import { UserDto } from '@user/dto/user.dto';
+import { UserDto } from 'src/users/dto/user.dto';
 
 export class TodoDto {
   @IsNotEmpty()

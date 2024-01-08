@@ -1,14 +1,14 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 
-import { TodoEntity } from '@todo/entity/todo.entity';
+import { TodoEntity } from 'src/todo/entity/todo.entity';
 import { TodoDto } from './dto/todo.dto';
-import { toTodoDto } from '@shared/mapper';
+import { toTodoDto } from 'src/shared/mapper';
 import { CreateTodoDto } from './dto/todo.create.dto';
 
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { UserDto } from '@user/dto/user.dto';
-import { UsersService } from '@user/users.service';
+import { UserDto } from 'src/users/dto/user.dto';
+import { UsersService } from 'src/users/users.service';
 
 @Injectable()
 export class TodoService {

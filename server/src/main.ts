@@ -3,20 +3,22 @@ import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger, ValidationPipe } from '@nestjs/common';
-import { getDbConnectionOptions, runDbMigrations } from '@shared/utils';
 import * as helmet from 'helmet';
 import * as rateLimit from 'express-rate-limit';
+import { getDbConnectionOptions, runDbMigrations } from 'src/shared/utils';
 
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
+console.log(port);
 
 async function bootstrap() {
   const app = await NestFactory.create(
     AppModule.forRoot(await getDbConnectionOptions(process.env.NODE_ENV)),
-    {
-      // logger: Boolean(process.env.ENABLELOGGING),
-      logger: console,
-    },
+    // {
+    //   // logger: Boolean(process.env.ENABLELOGGING),
+    //   // logger: console,
+    // },
   );
+  console.log(`Server started running on http://localhost:${port}`);
 
   /**
    * Helmet can help protect your app from some well-known
@@ -26,8 +28,9 @@ async function bootstrap() {
    *
    * https://github.com/helmetjs/helmet#how-it-works
    */
-  app.use(helmet());
+  // app.use(helmet());
 
+  console.log(`Server started running on http://localhost:${port}`);
   app.enableCors();
 
   // /**
@@ -40,16 +43,17 @@ async function bootstrap() {
   /**
    * To protect your applications from brute-force attacks
    */
-  app.use(
-    new rateLimit({
-      windowMs: 15 * 60 * 1000,
-      max: 100,
-    }),
-  );
+  // app.use(
+  //   new rateLimit({
+  //     windowMs: 15 * 60 * 1000,
+  //     max: 100,
+  //   }),
+  // );
 
   /**
    * Apply validation for all inputs globally
    */
+  console.log(`Server started running on http://localhost:${port}`);
   app.useGlobalPipes(
     new ValidationPipe({
       /**
@@ -63,14 +67,16 @@ async function bootstrap() {
     }),
   );
 
+  console.log(`Server started running on http://localhost:${port}`);
   /**
    * Run DB migrations
    */
   await runDbMigrations();
 
   await app.listen(port);
+  console.log(`Server started running on http://localhost:${port}`);
 
-  Logger.log(`Server started running on http://localhost:${port}`, 'Bootstrap');
+  // Logger.log(`Server started running on http://localhost:${port}`, 'Bootstrap');
 }
 
 bootstrap();

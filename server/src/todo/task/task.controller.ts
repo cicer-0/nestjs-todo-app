@@ -11,7 +11,7 @@ import {
 import { TaskService } from './task.service';
 import { TaskListDto } from '../dto/task.list.dto';
 import { TaskDto } from '../dto/task.dto';
-import { CreateTaskDto } from '@todo/dto/task.create.dto';
+import { CreateTaskDto } from 'src/todo/dto/task.create.dto';
 import { AuthGuard } from '@nestjs/passport';
 
 @Controller('api/tasks')

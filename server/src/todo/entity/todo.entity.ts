@@ -1,4 +1,4 @@
-import { TaskEntity } from '@todo/entity/task.entity';
+import { TaskEntity } from 'src/todo/entity/task.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -8,7 +8,7 @@ import {
   ManyToOne,
   JoinTable,
 } from 'typeorm';
-import { UserEntity } from '@user/entity/user.entity';
+import { UserEntity } from 'src/users/entity/user.entity';
 
 @Entity('todo')
 export class TodoEntity {

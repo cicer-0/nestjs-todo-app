@@ -5,7 +5,7 @@ import {
   CreateDateColumn,
   ManyToOne,
 } from 'typeorm';
-import { TodoEntity } from '@todo/entity/todo.entity';
+import { TodoEntity } from 'src/todo/entity/todo.entity';
 
 @Entity('task')
 export class TaskEntity {
